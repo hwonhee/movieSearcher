@@ -23,6 +23,8 @@ const App = () => {
         searchMovies('superman');
     },[])
 
+
+
     return(
         <div className="App">
             <h1 style={{ margin: 'auto' }}>Wonhee's Movie Searcher</h1>
@@ -33,6 +35,7 @@ const App = () => {
                 placeholder="Search for movies"
                 value={searchTerm}
                 onChange={(e) => {setSearchTerm(e.target.value)}}
+                onKeyDown={(e) => { if( e.key === 'Enter' ) { searchMovies(searchTerm) } }}
                 />
                 <img 
                 src={searchIcon}
